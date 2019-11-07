@@ -6,7 +6,10 @@ public class TimeLeap : MonoBehaviour
 {
 
     public enum TimePlane { PRESENT, PAST };
-    public SpriteMask mask;
+    public CanvasGroup myCG;
+    private bool flash = false;
+
+    private SpriteMask mask;
     private int playerLayer;
     private int bgLayer1;
     private int bgLayer2;
@@ -18,7 +21,24 @@ public class TimeLeap : MonoBehaviour
         bgLayer1 = LayerMask.NameToLayer("Background1");
         bgLayer2 = LayerMask.NameToLayer("Background2");
 
+        myCG.alpha = 0;
+
     }
+
+
+    void Update()
+    {
+        if (flash)
+        {
+            myCG.alpha = myCG.alpha - Time.deltaTime;
+            if (myCG.alpha <= 0)
+            {
+                myCG.alpha = 0;
+                flash = false;
+            }
+        }
+    }
+    
 
 
     /** Leap to a specific plane of time
@@ -30,6 +50,8 @@ public class TimeLeap : MonoBehaviour
 
     public void leapTime(TimePlane tp)
     {
+        flash = true;
+        myCG.alpha = 1;
         switch (tp)
         {
             case TimePlane.PAST:
