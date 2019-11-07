@@ -30,7 +30,7 @@ public class TimeLeap : MonoBehaviour
     {
         if (flash)
         {
-            myCG.alpha = myCG.alpha - Time.deltaTime;
+            myCG.alpha = myCG.alpha - 0.1f;
             if (myCG.alpha <= 0)
             {
                 myCG.alpha = 0;
