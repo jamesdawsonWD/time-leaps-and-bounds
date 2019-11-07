@@ -13,7 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Level
+  - JoinedBackgrounds
+  - Background1
+  - Background2
   - Enemy
   - Usable
   - Pickup
@@ -35,15 +37,19 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background2
+    uniqueID: 2601881513
     locked: 0
   - name: Background
     uniqueID: 4197125011
     locked: 0
   - name: Player
     uniqueID: 1098076117
+    locked: 0
+  - name: Foreground
+    uniqueID: 2347666441
     locked: 0
